@@ -1,4 +1,5 @@
 import { FRONT_MUSCLES, BACK_MUSCLES } from './bodyData.js';
+import { STRINGS, MUSCLE_NAMES } from './i18n.js';
 
 const SVG_NS = 'http://www.w3.org/2000/svg';
 
@@ -54,52 +55,21 @@ const REGION_GROUP = {
   'hip-flexor':         'hip-flexors',
 };
 
-// Pretty labels for the tooltip + panel title.
-const DISPLAY = {
-  'shoulder-front':     'Front/Lateral Delt',
-  'deltoid-rear':       'Rear Delt',
-  'triceps-long':       'Triceps · Long Head',
-  'triceps-lateral':    'Triceps · Lateral Head',
-  'lats-upper':         'Lats · Upper',
-  'lats-mid':           'Lats · Mid',
-  'lats-lower':         'Lats · Lower',
-  'traps-upper':        'Traps · Upper',
-  'traps-mid':          'Traps · Mid',
-  'traps-lower':        'Traps · Lower',
-  'abs-upper':          'Abs · Upper',
-  'abs-lower':          'Abs · Lower',
-  'serratus-anterior':  'Serratus Anterior',
-  'forearm-flexors':    'Forearm Flexors',
-  'forearm-extensors':  'Forearm Extensors',
-  'gluteus-maximus':    'Glutes',
-  'gluteus-medius':     'Abductors',
-  'quads':              'Quadriceps',
-  'hamstrings-medial':  'Hamstrings · Medial',
-  'hamstrings-lateral': 'Hamstrings · Lateral',
-  'tibialis-anterior':  'Tibialis Anterior',
-  'hip-flexor':         'Hip Flexors',
-  'lower-back-erectors':'Erector Spinae',
-  'lower-back-ql':      'Quadratus Lumborum',
-  'chest':              'Chest',
-  'calves':             'Calves',
-  'biceps':             'Biceps',
-  'obliques':           'Obliques',
-  'adductors':          'Adductors',
-  'neck':               'Neck',
-};
-
+// Muscle label in the current language; falls back to title-cased slug.
 const displayName = (region) =>
-  DISPLAY[region] ||
+  MUSCLE_NAMES[lang][region] ||
   region.split('-').map(w => w[0].toUpperCase() + w.slice(1)).join(' ');
 
 const getGroup = (region) => REGION_GROUP[region] || null;
 
-// Region-specific list first, fall back to the broader group list.
-const getList = (region) => exercises[region] || exercises[getGroup(region)] || [];
+// Current-language exercise data: region-specific list first, then group.
+const exercises = () => EX[lang] || {};
+const getList = (region) => exercises()[region] || exercises()[getGroup(region)] || [];
 
 // ── State ──────────────────────────────────────────────────────
 
-let exercises = {};
+let lang = localStorage.getItem('sa-lang') || 'en';
+const EX = { en: {}, el: {} };   // exercise data per language
 let selected = null;
 
 const tooltip      = document.getElementById('tooltip');
@@ -108,9 +78,14 @@ const panelClose   = document.getElementById('panel-close');
 const panelTitle   = document.getElementById('panel-muscle-name');
 const exerciseList = document.getElementById('exercise-list');
 
-fetch('./exercises.json')
-  .then(r => r.json())
-  .then(data => { exercises = data; });
+Promise.all([
+  fetch('./exercises.json').then(r => r.json()),
+  fetch('./exercises.el.json').then(r => r.json()),
+]).then(([en, el]) => {
+  EX.en = en;
+  EX.el = el;
+  if (selected) showPanel(selected);   // refresh if a region was already open
+});
 
 // ── Render a body view into an SVG ─────────────────────────────
 
@@ -201,7 +176,7 @@ function showPanel(region) {
           </div>
         </div>
       `).join('')
-    : '<p class="no-data">No exercises mapped for this region yet.</p>';
+    : `<p class="no-data">${STRINGS[lang].noData}</p>`;
 
   panel.classList.add('visible');
 }
@@ -210,10 +185,43 @@ function hidePanel() {
   panel.classList.remove('visible');
 }
 
+// ── Language ───────────────────────────────────────────────────
+
+function applyLang() {
+  document.documentElement.lang = lang;
+
+  // Static UI text marked with data-i18n
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (STRINGS[lang][key]) el.textContent = STRINGS[lang][key];
+  });
+
+  panelClose.setAttribute('aria-label', STRINGS[lang].closeLabel);
+
+  // Active state on the toggle
+  document.querySelectorAll('.lang-toggle button').forEach(b =>
+    b.classList.toggle('active', b.dataset.lang === lang));
+
+  // Refresh anything already on screen in the new language
+  if (selected) showPanel(selected);
+}
+
+function setLang(next) {
+  if (next === lang) return;
+  lang = next;
+  localStorage.setItem('sa-lang', lang);
+  applyLang();
+}
+
 // ── Init ───────────────────────────────────────────────────────
 
 renderBody(document.getElementById('body-front'), FRONT_MUSCLES);
 renderBody(document.getElementById('body-back'), BACK_MUSCLES);
+
+document.querySelectorAll('.lang-toggle button').forEach(b =>
+  b.addEventListener('click', () => setLang(b.dataset.lang)));
+
+applyLang();
 
 panelClose.addEventListener('click', () => {
   clearSelection();

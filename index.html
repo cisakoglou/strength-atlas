@@ -25,19 +25,23 @@
   <div id="tooltip" role="tooltip" aria-live="polite"></div>
 
   <header>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" data-lang="en">EN</button>
+      <button type="button" data-lang="el">ΕΛ</button>
+    </div>
     <h1>Strength Atlas</h1>
-    <p class="tagline">click a muscle &middot; discover your exercises</p>
+    <p class="tagline" data-i18n="tagline">click a muscle &middot; discover your exercises</p>
   </header>
 
   <div class="workspace">
     <section class="diagrams-area" aria-label="Body diagrams">
       <div class="chart-wrapper">
         <svg id="body-front" viewBox="0 0 35 93" role="img" aria-label="Front body diagram"></svg>
-        <span class="view-caption">Front Side</span>
+        <span class="view-caption" data-i18n="frontSide">Front Side</span>
       </div>
       <div class="chart-wrapper">
         <svg id="body-back" viewBox="37 0 35 93" role="img" aria-label="Back body diagram"></svg>
-        <span class="view-caption">Back Side</span>
+        <span class="view-caption" data-i18n="backSide">Back Side</span>
       </div>
     </section>
 
