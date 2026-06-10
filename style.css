@@ -151,9 +151,10 @@ header h1 {
 /* ── Muscle polygons (sketch line-art) ────────────────────── */
 
 .muscle {
-  fill: rgba(244, 238, 226, 0.55);
-  stroke: var(--ink);
-  stroke-width: 1;
+  fill: rgba(244, 238, 226, 0.5);
+  /* Softer, thinner internal lines read less like a shredded male torso */
+  stroke: rgba(46, 42, 36, 0.55);
+  stroke-width: 0.7;
   stroke-linejoin: round;
   vector-effect: non-scaling-stroke;
   transition: fill 0.18s ease, stroke 0.18s ease;
@@ -161,9 +162,9 @@ header h1 {
 
 /* Head / face / knees / hands / feet: drawn faintly, not interactive */
 .muscle.inert {
-  fill: rgba(244, 238, 226, 0.3);
-  stroke: rgba(30, 28, 24, 0.3);
-  stroke-width: 0.8;
+  fill: rgba(244, 238, 226, 0.28);
+  stroke: rgba(46, 42, 36, 0.22);
+  stroke-width: 0.6;
   pointer-events: none;
 }
 
