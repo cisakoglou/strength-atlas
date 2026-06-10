@@ -1,0 +1,283 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #f8f6f1;
+  --paper: #fdfcfa;
+  --ink: #1e1c18;
+  --ink-muted: #706e68;
+  --accent: #c8372d;
+  --accent-light: #fdf1f0;
+  --border: rgba(0, 0, 0, 0.08);
+  --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.07);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --panel-width: 340px;
+  --chart-w: 260px;
+  --chart-h: 500px;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--bg);
+  /* Subtle lined-paper texture */
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 27px,
+    rgba(0, 0, 0, 0.018) 27px,
+    rgba(0, 0, 0, 0.018) 28px
+  );
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  min-height: 100vh;
+}
+
+/* ── Header ───────────────────────────────────────────────── */
+
+header {
+  text-align: center;
+  padding: 44px 24px 32px;
+}
+
+header h1 {
+  font-family: 'Caveat', cursive;
+  font-size: 58px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+
+.tagline {
+  margin-top: 7px;
+  font-size: 13px;
+  color: var(--ink-muted);
+  letter-spacing: 0.05em;
+}
+
+/* ── Workspace (diagrams + panel) ─────────────────────────── */
+
+.workspace {
+  display: flex;
+  align-items: flex-start;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+
+.diagrams-area {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.chart-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.view-label {
+  font-family: 'Caveat', cursive;
+  font-size: 20px;
+  color: var(--ink-muted);
+  letter-spacing: 0.02em;
+}
+
+#body-front,
+#body-back {
+  width: var(--chart-w);
+  height: var(--chart-h);
+  cursor: pointer;
+}
+
+/* Apply sketch / pencil-line effect to the SVGs rendered by body-muscles */
+#body-front svg,
+#body-back svg {
+  filter: url(#sketch-filter);
+}
+
+/* ── Exercise panel ───────────────────────────────────────── */
+
+.exercise-panel {
+  width: 0;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: width 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  border-left: 1px solid transparent;
+}
+
+.exercise-panel.visible {
+  width: var(--panel-width);
+  border-left-color: var(--border);
+}
+
+.panel-inner {
+  width: var(--panel-width);
+  padding: 20px 22px 40px;
+  min-height: var(--chart-h);
+}
+
+.panel-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+  border-bottom: 2px solid var(--accent);
+}
+
+.panel-header h2 {
+  font-family: 'Caveat', cursive;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.1;
+}
+
+#panel-close {
+  background: none;
+  border: none;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--ink-muted);
+  padding: 2px 4px;
+  border-radius: 4px;
+  transition: color 0.15s, background 0.15s;
+  flex-shrink: 0;
+}
+
+#panel-close:hover {
+  color: var(--accent);
+  background: var(--accent-light);
+}
+
+/* ── Exercise cards ───────────────────────────────────────── */
+
+.exercise-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.exercise-card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+  padding: 13px 15px;
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+
+.exercise-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateX(2px);
+}
+
+.exercise-name {
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+
+.exercise-meta {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.03em;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.exercise-desc {
+  font-size: 13px;
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
+
+.no-data {
+  color: var(--ink-muted);
+  font-style: italic;
+  font-size: 13px;
+  padding: 24px 0;
+  text-align: center;
+}
+
+/* ── Tooltip ──────────────────────────────────────────────── */
+
+#tooltip {
+  position: fixed;
+  background: var(--ink);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.12s;
+}
+
+#tooltip.visible {
+  opacity: 1;
+}
+
+/* ── Mobile ───────────────────────────────────────────────── */
+
+@media (max-width: 720px) {
+  header h1 { font-size: 42px; }
+
+  .workspace {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 40px;
+  }
+
+  .diagrams-area {
+    gap: 16px;
+  }
+
+  #body-front,
+  #body-back {
+    width: 150px;
+    height: 290px;
+  }
+
+  .exercise-panel {
+    width: 100% !important;
+    border-left: none;
+    border-top: 1px solid var(--border);
+    transition: max-height 0.32s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.32s;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+  }
+
+  .exercise-panel.visible {
+    max-height: 800px;
+    opacity: 1;
+    width: 100% !important;
+    border-left-color: transparent;
+    border-top-color: var(--border);
+  }
+
+  .panel-inner {
+    width: 100%;
+    min-height: unset;
+  }
+}

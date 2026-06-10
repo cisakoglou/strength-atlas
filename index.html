@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strength Atlas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- SVG filter for hand-drawn sketch effect on body diagrams -->
+  <svg style="display:none" aria-hidden="true">
+    <defs>
+      <filter id="sketch-filter" x="-5%" y="-5%" width="110%" height="110%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.038" numOctaves="4" seed="7" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+  </svg>
+
+  <div id="tooltip" role="tooltip" aria-live="polite"></div>
+
+  <header>
+    <h1>Strength Atlas</h1>
+    <p class="tagline">click a muscle &middot; discover your exercises</p>
+  </header>
+
+  <div class="workspace">
+    <section class="diagrams-area" aria-label="Body diagrams">
+      <div class="chart-wrapper">
+        <span class="view-label">Front</span>
+        <div id="body-front" role="img" aria-label="Front body diagram"></div>
+      </div>
+      <div class="chart-wrapper">
+        <span class="view-label">Back</span>
+        <div id="body-back" role="img" aria-label="Back body diagram"></div>
+      </div>
+    </section>
+
+    <aside id="exercise-panel" class="exercise-panel" aria-label="Exercises">
+      <div class="panel-inner">
+        <div class="panel-header">
+          <h2 id="panel-muscle-name"></h2>
+          <button id="panel-close" aria-label="Close exercise panel">&times;</button>
+        </div>
+        <div id="exercise-list" class="exercise-list"></div>
+      </div>
+    </aside>
+  </div>
+
+  <script src="https://unpkg.com/body-muscles/dist/umd/body-muscles.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

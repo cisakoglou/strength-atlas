@@ -1,0 +1,604 @@
+{
+  "chest": [
+    {
+      "name": "Bench Press",
+      "sets": "4",
+      "reps": "6–8",
+      "description": "Lie flat, grip slightly wider than shoulders. Lower the bar to mid-chest, press up explosively."
+    },
+    {
+      "name": "Incline Dumbbell Press",
+      "sets": "3",
+      "reps": "10–12",
+      "description": "Set bench to 30–45°. Press dumbbells from shoulder level until arms are extended overhead."
+    },
+    {
+      "name": "Cable Fly",
+      "sets": "3",
+      "reps": "12–15",
+      "description": "Stand between cables set at shoulder height. Bring handles together in a wide arc, squeezing the chest at the midline."
+    },
+    {
+      "name": "Chest Dip",
+      "sets": "3",
+      "reps": "8–12",
+      "description": "Lean forward 20–30° to bias the chest. Lower until shoulders are below elbows, then push up."
+    },
+    {
+      "name": "Push-Up",
+      "sets": "3",
+      "reps": "15–20",
+      "description": "Hands shoulder-width apart. Lower chest to the floor while keeping hips level, then press back up."
+    }
+  ],
+  "shoulders": [
+    {
+      "name": "Overhead Press",
+      "sets": "4",
+      "reps": "6–8",
+      "description": "Press a barbell or dumbbells from shoulder height to full lockout overhead. Brace your core throughout."
+    },
+    {
+      "name": "Lateral Raise",
+      "sets": "4",
+      "reps": "12–15",
+      "description": "Hold dumbbells at your sides. Raise them out to 90° with a slight forward lean — lead with elbows, not wrists."
+    },
+    {
+      "name": "Face Pull",
+      "sets": "3",
+      "reps": "15–20",
+      "description": "Set cable at forehead height, use rope attachment. Pull toward your face, elbows flaring high, and externally rotate at the end."
+    },
+    {
+      "name": "Arnold Press",
+      "sets": "3",
+      "reps": "10–12",
+      "description": "Start with palms facing you at chin height. Rotate hands outward as you press overhead, reversing on the way down."
+    },
+    {
+      "name": "Rear Delt Fly",
+      "sets": "3",
+      "reps": "15",
+      "description": "Bent over or lying face-down on incline bench. Raise dumbbells out to the sides keeping arms nearly straight."
+    }
+  ],
+  "biceps": [
+    {
+      "name": "Barbell Curl",
+      "sets": "4",
+      "reps": "8–10",
+      "description": "Stand upright. Curl the bar from full extension to shoulder height without swinging your elbows forward."
+    },
+    {
+      "name": "Incline Dumbbell Curl",
+      "sets": "3",
+      "reps": "10–12",
+      "description": "Set bench to 60°. Let arms hang fully extended. Curl without letting the upper arm drift forward — full stretch at the bottom."
+    },
+    {
+      "name": "Hammer Curl",
+      "sets": "3",
+      "reps": "12",
+      "description": "Neutral grip (thumbs up). Curl to shoulder height. Targets the brachialis and brachioradialis as well."
+    },
+    {
+      "name": "Concentration Curl",
+      "sets": "3",
+      "reps": "12–15",
+      "description": "Seated, elbow braced against inner thigh. Curl one dumbbell in full isolation — slow and controlled."
+    },
+    {
+      "name": "Cable Curl",
+      "sets": "3",
+      "reps": "12–15",
+      "description": "Cable keeps tension through the entire arc, including at the top where dumbbells lose it. Great finisher."
+    }
+  ],
+  "triceps": [
+    {
+      "name": "Close-Grip Bench Press",
+      "sets": "4",
+      "reps": "6–8",
+      "description": "Grip the bar at shoulder width. Lower to lower chest and press, keeping elbows tucked close to the torso."
+    },
+    {
+      "name": "Skull Crusher",
+      "sets": "3",
+      "reps": "10–12",
+      "description": "Lie flat with an EZ-bar. Lower bar toward forehead by bending only at the elbow, then extend back to start."
+    },
+    {
+      "name": "Triceps Pushdown",
+      "sets": "3",
+      "reps": "12–15",
+      "description": "Cable set high, rope or bar attachment. Drive handles down until elbows are fully extended. Keep upper arms fixed."
+    },
+    {
+      "name": "Overhead Triceps Extension",
+      "sets": "3",
+      "reps": "12",
+      "description": "Hold one dumbbell overhead with both hands. Lower behind head until elbows are at 90°, then extend."
+    },
+    {
+      "name": "Triceps Dip",
+      "sets": "3",
+      "reps": "8–12",
+      "description": "Stay upright (torso vertical) to keep emphasis on the triceps instead of the chest. Full lockout at the top."
+    }
+  ],
+  "forearms": [
+    {
+      "name": "Wrist Curl",
+      "sets": "3",
+      "reps": "15–20",
+      "description": "Seated with forearms on thighs, palms up. Curl wrists upward through full range of motion."
+    },
+    {
+      "name": "Reverse Curl",
+      "sets": "3",
+      "reps": "12–15",
+      "description": "Overhand grip on a barbell or cable. Curl to shoulder height — heavily loads the brachioradialis and extensors."
+    },
+    {
+      "name": "Farmer's Walk",
+      "sets": "3",
+      "reps": "30 m",
+      "description": "Grip heavy dumbbells or trap bar and walk for distance. Simple, brutal, highly effective for grip strength."
+    },
+    {
+      "name": "Plate Pinch",
+      "sets": "3",
+      "reps": "30–45 s",
+      "description": "Pinch two plates together (smooth sides out) and hold at your side. Time each hold."
+    },
+    {
+      "name": "Dead Hang",
+      "sets": "3",
+      "reps": "30–60 s",
+      "description": "Hang from a pull-up bar in full extension. Develops grip endurance and decompresses the spine."
+    }
+  ],
+  "abs": [
+    {
+      "name": "Plank",
+      "sets": "3",
+      "reps": "45–60 s",
+      "description": "Forearms on floor, body in a straight line from head to heels. Squeeze glutes and breathe steadily."
+    },
+    {
+      "name": "Cable Crunch",
+      "sets": "4",
+      "reps": "12–15",
+      "description": "Kneeling at high cable, rope at neck. Crunch elbows toward knees — isolates the rectus abdominis under load."
+    },
+    {
+      "name": "Hanging Leg Raise",
+      "sets": "3",
+      "reps": "10–12",
+      "description": "Hang from bar. Raise straight legs to 90° (or knees to chest for regression). Control the descent."
+    },
+    {
+      "name": "Ab Wheel Rollout",
+      "sets": "3",
+      "reps": "8–10",
+      "description": "Kneel with hands on the wheel. Roll out until hips are about to drop, pull back using your core — not your hips."
+    },
+    {
+      "name": "Weighted Sit-Up",
+      "sets": "3",
+      "reps": "15–20",
+      "description": "Hold a plate across your chest or behind your head. Full range of motion — shoulders off the floor at the bottom."
+    }
+  ],
+  "obliques": [
+    {
+      "name": "Russian Twist",
+      "sets": "3",
+      "reps": "15 each side",
+      "description": "Seated, feet elevated or on floor. Rotate a weight from side to side — keep back straight, not rounded."
+    },
+    {
+      "name": "Side Plank",
+      "sets": "3",
+      "reps": "40 s each side",
+      "description": "Forearm or straight arm. Hips up in line with body. Add hip dips for extra range."
+    },
+    {
+      "name": "Cable Woodchop",
+      "sets": "3",
+      "reps": "12 each side",
+      "description": "Pull cable from high to low (or low to high). Rotate through the torso — don't just use arms."
+    },
+    {
+      "name": "Bicycle Crunch",
+      "sets": "3",
+      "reps": "20",
+      "description": "Alternate bringing opposite elbow to knee in a slow, controlled pedalling motion. No neck pulling."
+    },
+    {
+      "name": "Pallof Press",
+      "sets": "3",
+      "reps": "12 each side",
+      "description": "Stand perpendicular to cable. Press handle straight out and hold — resists rotation, building anti-rotational strength."
+    }
+  ],
+  "serratus": [
+    {
+      "name": "Serratus Punch",
+      "sets": "3",
+      "reps": "12–15",
+      "description": "Lie on bench or floor holding a dumbbell. Arm fully extended, 'punch' the ceiling by protracting the shoulder blade."
+    },
+    {
+      "name": "Push-Up Plus",
+      "sets": "3",
+      "reps": "15",
+      "description": "At the top of a push-up, continue pushing into the floor to round the upper back (protract scapulae). Builds the serratus."
+    },
+    {
+      "name": "Straight-Arm Pulldown",
+      "sets": "3",
+      "reps": "12–15",
+      "description": "Lean slightly forward at a high cable. Pull the bar to your hips with straight arms — the lat and serratus both fire."
+    },
+    {
+      "name": "Ab Wheel Rollout",
+      "sets": "3",
+      "reps": "8–10",
+      "description": "During the rollout, the serratus has to protract and upwardly rotate the scapula to maintain form."
+    },
+    {
+      "name": "Wall Slide",
+      "sets": "3",
+      "reps": "12",
+      "description": "Stand facing wall with forearms flat on it. Slide arms up while pushing into the wall — great for serratus activation."
+    }
+  ],
+  "traps": [
+    {
+      "name": "Barbell Shrug",
+      "sets": "4",
+      "reps": "10–12",
+      "description": "Hold a heavy barbell at arm's length. Shrug straight up (not rolling) as high as possible. Pause at the top."
+    },
+    {
+      "name": "Rack Pull",
+      "sets": "3",
+      "reps": "5–6",
+      "description": "Set pins just below knee. Pull like a deadlift — the upper traps work hard to keep the bar close and retract the scapulae."
+    },
+    {
+      "name": "Face Pull",
+      "sets": "3",
+      "reps": "15–20",
+      "description": "High cable with rope. Pull to forehead with elbows high — directly targets the mid and upper traps along with the rear delts."
+    },
+    {
+      "name": "Upright Row",
+      "sets": "3",
+      "reps": "10–12",
+      "description": "Barbell or cable, narrow grip. Pull to chin level, leading with elbows. Wide grip biases the upper traps."
+    },
+    {
+      "name": "Dumbbell Shrug",
+      "sets": "3",
+      "reps": "12–15",
+      "description": "Same mechanic as barbell shrug but allows a fuller range of motion and independent movement of each side."
+    }
+  ],
+  "lats": [
+    {
+      "name": "Pull-Up",
+      "sets": "4",
+      "reps": "6–10",
+      "description": "Dead hang, overhand grip. Pull until chin clears the bar — focus on driving elbows down toward your hips."
+    },
+    {
+      "name": "Lat Pulldown",
+      "sets": "4",
+      "reps": "10–12",
+      "description": "Wide overhand grip. Pull bar to upper chest, leaning back slightly. Feel the lats stretch fully at the top."
+    },
+    {
+      "name": "Bent-Over Row",
+      "sets": "4",
+      "reps": "8–10",
+      "description": "Hinge to ~45°, overhand or underhand grip. Pull bar to lower chest/upper abdomen. Row through your elbows, not hands."
+    },
+    {
+      "name": "Single-Arm Dumbbell Row",
+      "sets": "3",
+      "reps": "10–12",
+      "description": "Brace on bench. Pull dumbbell to hip — elbow past your torso at the top. Allows heavier loading and longer range."
+    },
+    {
+      "name": "Straight-Arm Pulldown",
+      "sets": "3",
+      "reps": "12–15",
+      "description": "High cable, arms straight. Pull bar down to hips — isolates the lat without biceps involvement."
+    }
+  ],
+  "lower-back": [
+    {
+      "name": "Deadlift",
+      "sets": "4",
+      "reps": "4–6",
+      "description": "Hinge at the hips, neutral spine, bar close. Drive through the floor and lock out hips at the top. The king of posterior chain lifts."
+    },
+    {
+      "name": "Romanian Deadlift",
+      "sets": "3",
+      "reps": "8–10",
+      "description": "Hinge with soft knees, bar dragging down the legs. Stop when you feel a strong hamstring stretch, then drive hips forward."
+    },
+    {
+      "name": "Good Morning",
+      "sets": "3",
+      "reps": "10–12",
+      "description": "Bar on traps, hinge forward keeping the back flat until torso is near horizontal. Teaches the hip hinge pattern safely."
+    },
+    {
+      "name": "Hyperextension",
+      "sets": "3",
+      "reps": "12–15",
+      "description": "On a GHD or back extension bench. Lower until back is parallel to floor, then raise back to neutral — don't hyperextend at the top."
+    },
+    {
+      "name": "Bird Dog",
+      "sets": "3",
+      "reps": "12 each side",
+      "description": "On hands and knees. Extend opposite arm and leg simultaneously. Builds spinal stability and erector endurance."
+    }
+  ],
+  "glutes": [
+    {
+      "name": "Hip Thrust",
+      "sets": "4",
+      "reps": "10–12",
+      "description": "Upper back on bench, barbell across hips. Drive hips to full extension — squeeze hard at the top for 1 second."
+    },
+    {
+      "name": "Barbell Squat",
+      "sets": "4",
+      "reps": "5–6",
+      "description": "High or low bar back squat. Drive knees out and break parallel for maximum glute recruitment."
+    },
+    {
+      "name": "Bulgarian Split Squat",
+      "sets": "3",
+      "reps": "10 each side",
+      "description": "Rear foot elevated, front foot far forward. Drop the hips straight down — one of the best single-leg glute exercises."
+    },
+    {
+      "name": "Glute Bridge",
+      "sets": "3",
+      "reps": "15–20",
+      "description": "Lie on floor, feet flat. Drive hips to full extension — a lighter version of the hip thrust, great for activation warm-ups."
+    },
+    {
+      "name": "Cable Kickback",
+      "sets": "3",
+      "reps": "15 each side",
+      "description": "Attach ankle strap to low cable. Kick straight back until hip is fully extended. Keep the torso steady."
+    }
+  ],
+  "quads": [
+    {
+      "name": "Barbell Squat",
+      "sets": "4",
+      "reps": "5–8",
+      "description": "Quad emphasis: higher bar position, narrower stance, more forward knee travel over the toes."
+    },
+    {
+      "name": "Leg Press",
+      "sets": "4",
+      "reps": "10–12",
+      "description": "Feet low and narrow on the platform to maximize quad activation. Control the descent — don't lock out at the top."
+    },
+    {
+      "name": "Hack Squat",
+      "sets": "3",
+      "reps": "8–10",
+      "description": "Machine or barbell behind heels. Deep range of motion with forward knee travel — great for lower quad sweep."
+    },
+    {
+      "name": "Lunge",
+      "sets": "3",
+      "reps": "10 each side",
+      "description": "Step forward into a 90° bend. Keep the torso upright to keep tension on the lead quad."
+    },
+    {
+      "name": "Leg Extension",
+      "sets": "3",
+      "reps": "12–15",
+      "description": "Machine isolation for the quads. Squeeze hard at the top. Good as a finisher after compounds."
+    }
+  ],
+  "hamstrings": [
+    {
+      "name": "Romanian Deadlift",
+      "sets": "4",
+      "reps": "8–10",
+      "description": "Hinge at the hip with slight knee bend. Bar stays close to the legs. Stretch hamstrings at the bottom, squeeze glutes on the way up."
+    },
+    {
+      "name": "Leg Curl",
+      "sets": "4",
+      "reps": "10–12",
+      "description": "Seated or lying machine. Full stretch at the top, curl to maximum knee flexion. Slow on the way back down."
+    },
+    {
+      "name": "Nordic Curl",
+      "sets": "3",
+      "reps": "4–6",
+      "description": "Anchor feet, lower yourself to the floor under control using only hamstring eccentric strength. One of the hardest bodyweight exercises."
+    },
+    {
+      "name": "Good Morning",
+      "sets": "3",
+      "reps": "10–12",
+      "description": "Bar on traps, hinge with soft knees. Hamstrings load heavily during the stretch phase of the movement."
+    },
+    {
+      "name": "Glute-Ham Raise",
+      "sets": "3",
+      "reps": "6–8",
+      "description": "GHD machine. Lower with straight body, then curl yourself back up using the hamstrings. Brutal but highly effective."
+    }
+  ],
+  "calves": [
+    {
+      "name": "Standing Calf Raise",
+      "sets": "4",
+      "reps": "12–15",
+      "description": "Full range of motion — deep stretch at the bottom, pause at the top. Targets the gastrocnemius."
+    },
+    {
+      "name": "Seated Calf Raise",
+      "sets": "4",
+      "reps": "15–20",
+      "description": "With knees bent, the gastrocnemius is slackened, so this isolates the soleus. Use moderate weight and high reps."
+    },
+    {
+      "name": "Leg Press Calf Raise",
+      "sets": "3",
+      "reps": "15",
+      "description": "Feet on the bottom edge of the leg press plate. Push through the ball of the foot through full range of motion."
+    },
+    {
+      "name": "Single-Leg Calf Raise",
+      "sets": "3",
+      "reps": "15 each",
+      "description": "Hold one dumbbell for resistance. Single-leg version exposes and corrects strength imbalances between sides."
+    },
+    {
+      "name": "Jump Rope",
+      "sets": "3",
+      "reps": "2 min",
+      "description": "Stay on the balls of your feet. Builds calf endurance and explosive elasticity — underrated conditioning tool."
+    }
+  ],
+  "hip-flexors": [
+    {
+      "name": "Hanging Knee Raise",
+      "sets": "3",
+      "reps": "12–15",
+      "description": "Hang from bar. Drive knees up toward chest. Control the descent to keep hip flexors under tension."
+    },
+    {
+      "name": "Cable Hip Flexion",
+      "sets": "3",
+      "reps": "12 each side",
+      "description": "Ankle strap on low cable. Drive knee up to waist height against resistance. Slow and controlled."
+    },
+    {
+      "name": "Mountain Climber",
+      "sets": "3",
+      "reps": "30 s",
+      "description": "In push-up position. Alternate driving knees toward chest in a running motion. Also builds core and cardio."
+    },
+    {
+      "name": "Psoas March",
+      "sets": "3",
+      "reps": "12 each side",
+      "description": "Lying on floor with lower back pressed down. Alternate lifting one knee toward your chest in a slow, controlled march."
+    },
+    {
+      "name": "Reverse Crunch",
+      "sets": "3",
+      "reps": "15",
+      "description": "Lie flat, bring knees to chest by tilting the pelvis — works the lower abs and hip flexors together."
+    }
+  ],
+  "adductors": [
+    {
+      "name": "Sumo Squat",
+      "sets": "4",
+      "reps": "10–12",
+      "description": "Wide stance, toes pointed out at 45°. The wide base puts significant tension on the inner thighs throughout."
+    },
+    {
+      "name": "Cable Hip Adduction",
+      "sets": "3",
+      "reps": "15 each side",
+      "description": "Ankle strap on low cable. Stand sideways, pull the working leg across the body. Control the return."
+    },
+    {
+      "name": "Copenhagen Plank",
+      "sets": "3",
+      "reps": "30 s each side",
+      "description": "Side plank with top foot on a bench and bottom leg adducting up to meet it. Excellent adductor strength builder."
+    },
+    {
+      "name": "Lateral Lunge",
+      "sets": "3",
+      "reps": "10 each side",
+      "description": "Step wide to the side, bending one knee while the other leg stays straight. Great stretch and load on the adductors."
+    },
+    {
+      "name": "Adductor Machine",
+      "sets": "3",
+      "reps": "15–20",
+      "description": "Inner thigh machine. Work through full range of motion and squeeze at the closed position."
+    }
+  ],
+  "neck": [
+    {
+      "name": "Chin Tuck",
+      "sets": "3",
+      "reps": "15",
+      "description": "Standing or seated. Gently retract your chin straight back (not down). Holds 3 s each. Strengthens deep neck flexors."
+    },
+    {
+      "name": "Plate Neck Curl",
+      "sets": "3",
+      "reps": "15",
+      "description": "Lie face-up, plate on forehead with a towel. Curl head toward chest slowly. Builds neck flexors."
+    },
+    {
+      "name": "Neck Extension",
+      "sets": "3",
+      "reps": "15",
+      "description": "Lie face-down, plate on back of head with a towel. Extend head up and back. Works the neck extensors and upper traps."
+    },
+    {
+      "name": "Lateral Neck Flexion",
+      "sets": "3",
+      "reps": "12 each side",
+      "description": "Tilt head toward shoulder against manual resistance or a light band. Develops lateral neck stability."
+    },
+    {
+      "name": "Resistance Band Neck Press",
+      "sets": "3",
+      "reps": "12 each direction",
+      "description": "Band around head, standing. Push head forward, back, and laterally against band resistance — 360° neck development."
+    }
+  ],
+  "tibialis": [
+    {
+      "name": "Toe Raise",
+      "sets": "3",
+      "reps": "20–25",
+      "description": "Stand with heels on a step or flat floor. Raise toes as high as possible, hold 1 s, lower. Often neglected and easy to fix."
+    },
+    {
+      "name": "Tibialis Raise (seated)",
+      "sets": "3",
+      "reps": "15–20",
+      "description": "Sit on a bench, heels on the floor. Raise toes up against gravity or a light band — great for runners and shin splint prevention."
+    },
+    {
+      "name": "Heel Walk",
+      "sets": "3",
+      "reps": "20 m",
+      "description": "Walk on heels only — toes raised the whole time. Builds tibialis anterior endurance."
+    },
+    {
+      "name": "Band Dorsiflexion",
+      "sets": "3",
+      "reps": "15 each",
+      "description": "Sit with a band around the top of the foot. Pull toes toward shin against resistance. Seated machine version is also great."
+    }
+  ]
+}
