@@ -136,7 +136,11 @@ function attachListeners(svg) {
     document.querySelectorAll(`path[data-region="${region}"]`)
       .forEach(p => p.classList.toggle(cls, on));
 
-  svg.addEventListener('mouseover', e => {
+  // Hover highlight + tooltip are mouse-only. On touch, a tap emulates
+  // mouseover with no matching mouseout, so the label would stick — skip it
+  // and let the tap drive selection (red highlight + panel) instead.
+  svg.addEventListener('pointerover', e => {
+    if (e.pointerType !== 'mouse') return;
     const region = e.target.dataset?.region;
     if (!region || !getGroup(region)) return;
     toggle(region, 'hover', true);
@@ -144,7 +148,8 @@ function attachListeners(svg) {
     tooltip.classList.add('visible');
   });
 
-  svg.addEventListener('mouseout', e => {
+  svg.addEventListener('pointerout', e => {
+    if (e.pointerType !== 'mouse') return;
     const region = e.target.dataset?.region;
     if (!region) return;
     toggle(region, 'hover', false);
