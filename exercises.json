@@ -600,5 +600,101 @@
       "reps": "15 each",
       "description": "Sit with a band around the top of the foot. Pull toes toward shin against resistance. Seated machine version is also great."
     }
+  ],
+  "abductors": [
+    { "name": "Hip Abduction Machine", "description": "Seated, pads on the outer thighs. Drive the knees apart against resistance, pause at the widest point. Direct gluteus medius work." },
+    { "name": "Cable Hip Abduction", "description": "Ankle strap on a low cable, standing side-on. Lift the working leg straight out to the side without leaning. Slow return." },
+    { "name": "Banded Lateral Walk", "description": "Band above the knees, half-squat stance. Step sideways keeping constant tension — don't let the knees cave in." },
+    { "name": "Side-Lying Leg Raise", "description": "Lie on your side, raise the top leg toward the ceiling with the toe slightly down. Targets the glute medius in isolation." }
+  ],
+  "shoulder-front": [
+    { "name": "Overhead Press", "description": "Press a barbell or dumbbells from shoulder height to full lockout. The anterior delt is the prime mover off the bottom." },
+    { "name": "Arnold Press", "description": "Start palms-facing-you at chin height, rotate outward as you press. The rotation maximises front-delt engagement." },
+    { "name": "Front Raise", "description": "Raise a plate or dumbbells straight in front to eye level with straight arms. Pure anterior-delt isolation." },
+    { "name": "Incline Dumbbell Press", "description": "A 30° incline shifts pressing load onto the front delts and upper chest together." }
+  ],
+  "shoulder-side": [
+    { "name": "Lateral Raise", "description": "Dumbbells at your sides, slight forward lean. Raise to 90° leading with the elbows — the cornerstone of side-delt width." },
+    { "name": "Cable Lateral Raise", "description": "Low cable behind you, raise across and out. Cable keeps tension at the bottom where dumbbells go slack." },
+    { "name": "Leaning Lateral Raise", "description": "Hold a post and lean away, raising the outside arm. Lengthens the range and isolates the lateral delt." },
+    { "name": "Wide-Grip Upright Row", "description": "Pull to chest height with a wide grip, elbows high. Biases the lateral delt over the traps." }
+  ],
+  "deltoid-rear": [
+    { "name": "Face Pull", "description": "High cable with rope. Pull to your forehead with elbows flaring high, externally rotating at the end. Rear-delt and rotator-cuff health." },
+    { "name": "Rear Delt Fly", "description": "Bent over or chest-on-incline. Raise dumbbells out to the sides with nearly straight arms — squeeze the rear delts, don't shrug." },
+    { "name": "Reverse Pec Deck", "description": "Machine reverse fly. Constant tension through the whole arc, easy to feel the rear delts working." },
+    { "name": "Bent-Over Lateral Raise", "description": "Hinge to near-horizontal torso. Raise dumbbells out wide — strict form, light weight, high reps." }
+  ],
+  "triceps-long": [
+    { "name": "Overhead Cable Extension", "description": "Face away from a high cable, press the rope forward and up. The overhead position stretches the long head — its strongest stimulus." },
+    { "name": "Overhead Dumbbell Extension", "description": "One dumbbell held overhead with both hands. Lower behind the head to a deep stretch, then extend. Long-head focused." },
+    { "name": "Incline Skull Crusher", "description": "On an incline so the upper arms sit behind the torso. Loads the long head in its lengthened position more than a flat skull crusher." },
+    { "name": "Close-Grip Bench Press", "description": "Heavy compound pressing that loads all three heads — the long head included — under the most weight." }
+  ],
+  "triceps-lateral": [
+    { "name": "Triceps Pushdown", "description": "Elbows pinned to your sides. The arm-down position emphasises the lateral head. Squeeze hard at full lockout." },
+    { "name": "Rope Pushdown", "description": "Spread the rope apart at the bottom of each rep for a peak lateral-head contraction." },
+    { "name": "Diamond Push-Up", "description": "Hands together under the chest, elbows tracking back. Bodyweight lateral-head work." },
+    { "name": "Bench Dip", "description": "Hands on a bench behind you, torso vertical. A lateral-head-dominant pressing pattern." }
+  ],
+  "lats-upper": [
+    { "name": "Wide-Grip Pull-Up", "description": "A wide overhand grip emphasises the upper, outer lat sweep. Pull until the chin clears the bar." },
+    { "name": "Wide-Grip Lat Pulldown", "description": "Pull a wide bar to the upper chest, leaning back slightly. Targets lat width near the insertion." },
+    { "name": "Dumbbell Pullover", "description": "Lie across a bench, lower one dumbbell behind your head and pull it back over the chest. Stretches the upper lats under load." }
+  ],
+  "lats-mid": [
+    { "name": "Bent-Over Row", "description": "Hinge to ~45°, pull the bar to your lower chest/upper abdomen. Builds mid-back thickness through the lats." },
+    { "name": "Seated Cable Row", "description": "Neutral grip, pull to the navel and drive the elbows straight back. Mid-lat and rhomboid thickness." },
+    { "name": "T-Bar Row", "description": "Chest supported or free. Heavy rowing that thickens the central back through the mid lats." }
+  ],
+  "lats-lower": [
+    { "name": "Underhand Lat Pulldown", "description": "A close, supinated grip pulls the elbows tight to the sides — biases the lower lats near the waist insertion." },
+    { "name": "Single-Arm Dumbbell Row", "description": "Brace on a bench, pull the dumbbell to the hip with a long stretch at the bottom. Strong lower-lat range." },
+    { "name": "Straight-Arm Pulldown", "description": "High cable, straight arms, pull to the hips. Isolates the lats — strong lower-lat squeeze at the end." }
+  ],
+  "traps-upper": [
+    { "name": "Barbell Shrug", "description": "Hold a heavy bar at arm's length, shrug straight up as high as possible. Pause at the top. The classic upper-trap builder." },
+    { "name": "Dumbbell Shrug", "description": "Shrug with a fuller range than the bar allows, each side moving independently." },
+    { "name": "Rack Pull", "description": "Pins just below the knee. The upper traps work hard to hold the bar close and retract the scapulae under heavy load." }
+  ],
+  "traps-mid": [
+    { "name": "Face Pull", "description": "Pull a rope to the forehead with elbows high — strong scapular retraction trains the mid traps and rear delts." },
+    { "name": "Seated Row (retract)", "description": "Pull to the abdomen and consciously pinch the shoulder blades together at the end. Mid-trap focus." },
+    { "name": "Prone Y-T-W Raise", "description": "Face-down on an incline, trace Y, T and W shapes with light dumbbells. Endurance work for the mid and lower traps." }
+  ],
+  "traps-lower": [
+    { "name": "Prone Y Raise", "description": "Face-down on an incline, raise the arms overhead in a Y with thumbs up. Directly trains scapular depression — the lower traps." },
+    { "name": "Overhead Carry", "description": "Hold a dumbbell or kettlebell locked out overhead and walk. The lower traps stabilise the upwardly-rotated scapula." },
+    { "name": "Wall Slide", "description": "Forearms on a wall, slide up while keeping contact. Grooves lower-trap and serratus coordination." }
+  ],
+  "abs-upper": [
+    { "name": "Crunch", "description": "Lie flat, curl the rib cage toward the pelvis. Short range, focused on the upper rectus abdominis." },
+    { "name": "Cable Crunch", "description": "Kneeling at a high cable, rope by the neck. Crunch the elbows toward the knees under load." },
+    { "name": "Weighted Sit-Up", "description": "Hold a plate on the chest. Full range — shoulders off the floor at the bottom, sit fully upright at the top." }
+  ],
+  "abs-lower": [
+    { "name": "Hanging Leg Raise", "description": "Hang from a bar, raise straight legs to 90° (knees-to-chest as a regression). Emphasises the lower rectus abdominis." },
+    { "name": "Reverse Crunch", "description": "Lie flat, bring the knees to the chest by tilting the pelvis — curls the lower abs without hip-flexor takeover." },
+    { "name": "Lying Leg Raise", "description": "Flat on your back, hands under the hips. Lower straight legs slowly and raise without arching the lower back." }
+  ],
+  "forearm-flexors": [
+    { "name": "Wrist Curl", "description": "Forearms on the thighs, palms up. Curl the wrists up through a full range. Trains the flexor side of the forearm." },
+    { "name": "Dead Hang", "description": "Hang from a bar in full extension. Builds crushing grip endurance through the flexors." },
+    { "name": "Farmer's Walk", "description": "Carry heavy dumbbells or a trap bar for distance. Brutal, direct grip and flexor loading." }
+  ],
+  "forearm-extensors": [
+    { "name": "Reverse Wrist Curl", "description": "Forearms on the thighs, palms down. Raise the backs of the hands toward you. Trains the extensors most people neglect." },
+    { "name": "Reverse Curl", "description": "Overhand grip, curl to shoulder height. Heavily loads the brachioradialis and wrist extensors." },
+    { "name": "Wrist Roller", "description": "Roll a weight up on a cord using only the wrists. Down then up — torches the extensors and flexors together." }
+  ],
+  "lower-back-erectors": [
+    { "name": "Deadlift", "description": "Hinge at the hips, neutral spine, bar close. The erectors isometrically resist flexion under the heaviest load you'll lift." },
+    { "name": "Back Extension", "description": "On a GHD or 45° bench, lower to parallel and extend back to neutral. Direct, trainable erector work." },
+    { "name": "Good Morning", "description": "Bar on the traps, hinge to near-horizontal with a flat back. The erectors fight to keep the spine neutral." }
+  ],
+  "lower-back-ql": [
+    { "name": "Suitcase Carry", "description": "Carry a single heavy dumbbell at one side and walk tall. The opposite QL fires hard to keep you upright." },
+    { "name": "Side Bend", "description": "Hold a dumbbell at one side, bend laterally and return. Direct frontal-plane work for the quadratus lumborum." },
+    { "name": "Side Plank", "description": "Hips stacked and lifted in a straight line. The bottom-side QL and obliques resist collapse." }
   ]
 }

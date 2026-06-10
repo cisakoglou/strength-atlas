@@ -10,12 +10,14 @@
 </head>
 <body>
 
-  <!-- SVG filter for hand-drawn sketch effect on body diagrams -->
-  <svg style="display:none" aria-hidden="true">
+  <!-- SVG filter for hand-drawn sketch effect on body diagrams.
+       Must NOT use display:none — iOS Safari won't resolve a filter
+       referenced from a display:none element, blanking the figures. -->
+  <svg width="0" height="0" aria-hidden="true" style="position:absolute">
     <defs>
-      <filter id="sketch-filter" x="-5%" y="-5%" width="110%" height="110%">
-        <feTurbulence type="fractalNoise" baseFrequency="0.038" numOctaves="4" seed="7" result="noise"/>
-        <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+      <filter id="sketch-filter" x="-12%" y="-12%" width="124%" height="124%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.28" numOctaves="2" seed="4" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.1" xChannelSelector="R" yChannelSelector="G"/>
       </filter>
     </defs>
   </svg>
@@ -30,12 +32,12 @@
   <div class="workspace">
     <section class="diagrams-area" aria-label="Body diagrams">
       <div class="chart-wrapper">
-        <span class="view-label">Front</span>
-        <div id="body-front" role="img" aria-label="Front body diagram"></div>
+        <svg id="body-front" viewBox="0 0 35 93" role="img" aria-label="Front body diagram"></svg>
+        <span class="view-caption">Front Side</span>
       </div>
       <div class="chart-wrapper">
-        <span class="view-label">Back</span>
-        <div id="body-back" role="img" aria-label="Back body diagram"></div>
+        <svg id="body-back" viewBox="37 0 35 93" role="img" aria-label="Back body diagram"></svg>
+        <span class="view-caption">Back Side</span>
       </div>
     </section>
 
@@ -50,7 +52,6 @@
     </aside>
   </div>
 
-  <script src="https://unpkg.com/body-muscles/dist/umd/body-muscles.umd.min.js"></script>
-  <script src="app.js"></script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>
