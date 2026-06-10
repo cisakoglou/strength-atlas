@@ -3,9 +3,9 @@ import { STRINGS, MUSCLE_NAMES } from './i18n.js';
 
 const SVG_NS = 'http://www.w3.org/2000/svg';
 
-// Paths we never render — drop the hair/scalp cap to keep the figure neutral.
-// (`head`/`head-back` are the crown; `face` is the face, which we keep.)
-const SKIP = new Set(['head', 'head-back']);
+// Paths we never render — drop the hair/scalp cap AND the angular faceted
+// face; a plain oval head (drawn below) reads more gender-neutral.
+const SKIP = new Set(['head', 'head-back', 'face']);
 
 // Strip side suffix so left+right of the same region act as one unit.
 const baseSlug = (id) => id.replace(/-(left|right)$/, '');
@@ -104,6 +104,17 @@ function renderBody(svg, muscles) {
   });
 
   attachListeners(svg);
+}
+
+// Neutral oval head (replaces the angular faceted face path).
+function addHead(svg, cx, cy, rx, ry) {
+  const el = document.createElementNS(SVG_NS, 'ellipse');
+  el.setAttribute('cx', cx);
+  el.setAttribute('cy', cy);
+  el.setAttribute('rx', rx);
+  el.setAttribute('ry', ry);
+  el.setAttribute('class', 'muscle inert');
+  svg.appendChild(el);
 }
 
 function attachListeners(svg) {
@@ -217,6 +228,10 @@ function setLang(next) {
 
 renderBody(document.getElementById('body-front'), FRONT_MUSCLES);
 renderBody(document.getElementById('body-back'), BACK_MUSCLES);
+
+// Neutral oval heads, positioned over each view's head region.
+addHead(document.getElementById('body-front'), 15.95, 6, 4.3, 6);
+addHead(document.getElementById('body-back'), 52.4, 6, 4.3, 6);
 
 document.querySelectorAll('.lang-toggle button').forEach(b =>
   b.addEventListener('click', () => setLang(b.dataset.lang)));
