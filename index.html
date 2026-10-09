@@ -5,19 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Strength Atlas</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style-smooth.css">
 </head>
 <body>
 
-  <!-- SVG filter for hand-drawn sketch effect on body diagrams.
-       Must NOT use display:none — iOS Safari won't resolve a filter
-       referenced from a display:none element, blanking the figures. -->
+  <!-- Soft depth/relief shadow for the anatomical figures. -->
   <svg width="0" height="0" aria-hidden="true" style="position:absolute">
     <defs>
-      <filter id="sketch-filter" x="-12%" y="-12%" width="124%" height="124%">
-        <feTurbulence type="fractalNoise" baseFrequency="0.28" numOctaves="2" seed="4" result="noise"/>
-        <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.1" xChannelSelector="R" yChannelSelector="G"/>
+      <filter id="body-depth" x="-20%" y="-20%" width="140%" height="140%">
+        <feDropShadow dx="0" dy="2" stdDeviation="2.4" flood-color="#1a2330" flood-opacity="0.3"/>
       </filter>
     </defs>
   </svg>
@@ -25,10 +23,7 @@
   <div id="tooltip" role="tooltip" aria-live="polite"></div>
 
   <header>
-    <div class="lang-toggle" role="group" aria-label="Language">
-      <button type="button" data-lang="en">EN</button>
-      <button type="button" data-lang="el">ΕΛ</button>
-    </div>
+    <img class="brand-logo" src="logo.png" alt="Strength Atlas logo" width="72" height="72">
     <h1>Strength Atlas</h1>
     <p class="tagline" data-i18n="tagline">click a muscle &middot; discover your exercises</p>
   </header>
@@ -36,11 +31,11 @@
   <div class="workspace">
     <section class="diagrams-area" aria-label="Body diagrams">
       <div class="chart-wrapper">
-        <svg id="body-front" viewBox="0 0 35 93" role="img" aria-label="Front body diagram"></svg>
+        <svg id="body-front" viewBox="-50 -40 734 1538" role="img" aria-label="Front body diagram"></svg>
         <span class="view-caption" data-i18n="frontSide">Front Side</span>
       </div>
       <div class="chart-wrapper">
-        <svg id="body-back" viewBox="37 0 35 93" role="img" aria-label="Back body diagram"></svg>
+        <svg id="body-back" viewBox="756 0 774 1448" role="img" aria-label="Back body diagram"></svg>
         <span class="view-caption" data-i18n="backSide">Back Side</span>
       </div>
     </section>
@@ -56,6 +51,6 @@
     </aside>
   </div>
 
-  <script type="module" src="app.js"></script>
+  <script type="module" src="app-smooth.js"></script>
 </body>
 </html>

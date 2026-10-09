@@ -5,18 +5,29 @@
 }
 
 :root {
-  --bg: #fefef4;
-  --paper: #fffffe;
-  --ink: #1e1c18;
-  --ink-muted: #706e68;
+  --bg: #cdd2d8;
+  --bg-2: #aeb4bd;
+  --paper: #fdfdfb;
+  --ink: #20262e;
+  --ink-muted: #5d6670;
   --accent: #c8372d;
   --accent-light: #fdf1f0;
-  --border: rgba(0, 0, 0, 0.08);
+  --border: rgba(20, 30, 45, 0.12);
   --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.07);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 8px 28px rgba(20, 30, 45, 0.16);
   --panel-width: 340px;
   --chart-w: 240px;
   --chart-h: 630px;
+
+  /* Anatomical muscle palette — warm reds/corals with depth */
+  --m-deep:   #a8392f;
+  --m-crimson:#c0463a;
+  --m-red:    #d1523f;
+  --m-coral:  #e0674f;
+  --m-warm:   #e97d60;
+  --m-light:  #f0967a;
+  --m-tendon: #e9dcc6;
+  --m-bone:   #ded2bb;
 }
 
 html, body {
@@ -25,22 +36,9 @@ html, body {
 
 body {
   background-color: var(--bg);
-  /* Notebook: red margin line + college-ruled blue lines */
   background-image:
-    linear-gradient(
-      90deg,
-      transparent 68px,
-      rgba(210, 75, 75, 0.28) 68px,
-      rgba(210, 75, 75, 0.28) 70px,
-      transparent 70px
-    ),
-    repeating-linear-gradient(
-      180deg,
-      transparent 0px,
-      transparent 27px,
-      rgba(130, 170, 215, 0.38) 27px,
-      rgba(130, 170, 215, 0.38) 28px
-    );
+    radial-gradient(135% 100% at 50% 0%, #e7eaee 0%, var(--bg) 42%, var(--bg-2) 100%);
+  background-attachment: fixed;
   color: var(--ink);
   font-family: 'Inter', sans-serif;
   font-size: 14px;
@@ -129,6 +127,11 @@ header h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 22px 18px 16px;
+  background: linear-gradient(170deg, #fbfbf9 0%, #eef0f2 100%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
 }
 
 .view-caption {
@@ -144,27 +147,59 @@ header h1 {
   width: var(--chart-w);
   height: var(--chart-h);
   overflow: visible;
-  /* Hand-drawn jitter applied to the whole figure */
-  filter: url(#sketch-filter);
+  /* Soft relief shadow gives the flat vector muscles anatomical depth */
+  filter: url(#body-depth);
 }
 
-/* ── Muscle polygons (sketch line-art) ────────────────────── */
+/* ── Muscle polygons (anatomical colour chart) ────────────── */
 
 .muscle {
-  fill: rgba(244, 238, 226, 0.5);
-  /* Softer, thinner internal lines read less like a shredded male torso */
-  stroke: rgba(46, 42, 36, 0.55);
-  stroke-width: 0.7;
+  fill: var(--m-red);
+  stroke: rgba(90, 24, 18, 0.55);
+  stroke-width: 0.45;
   stroke-linejoin: round;
   vector-effect: non-scaling-stroke;
-  transition: fill 0.18s ease, stroke 0.18s ease;
+  transition: fill 0.18s ease, stroke 0.18s ease, filter 0.18s ease;
 }
 
-/* Head / face / knees / hands / feet: drawn faintly, not interactive */
+/* Colour-code muscle groups so each target reads distinctly */
+.muscle[data-region="chest"]                { fill: var(--m-coral); }
+.muscle[data-region="abs-upper"],
+.muscle[data-region="abs-lower"]            { fill: var(--m-warm); }
+.muscle[data-region="serratus-anterior"]   { fill: var(--m-light); }
+.muscle[data-region="obliques"]            { fill: var(--m-coral); }
+.muscle[data-region="shoulder-front"],
+.muscle[data-region="deltoid-rear"]        { fill: var(--m-crimson); }
+.muscle[data-region="biceps"]              { fill: var(--m-red); }
+.muscle[data-region="triceps-long"],
+.muscle[data-region="triceps-lateral"]     { fill: var(--m-crimson); }
+.muscle[data-region="forearm"],
+.muscle[data-region="forearm-flexors"],
+.muscle[data-region="forearm-extensors"]   { fill: var(--m-light); }
+.muscle[data-region="neck"]                { fill: var(--m-coral); }
+.muscle[data-region="traps-upper"],
+.muscle[data-region="traps-mid"],
+.muscle[data-region="traps-lower"]         { fill: var(--m-red); }
+.muscle[data-region="lats-upper"],
+.muscle[data-region="lats-mid"],
+.muscle[data-region="lats-lower"]          { fill: var(--m-coral); }
+.muscle[data-region="lower-back-erectors"],
+.muscle[data-region="lower-back-ql"]       { fill: var(--m-deep); }
+.muscle[data-region="gluteus-maximus"]     { fill: var(--m-coral); }
+.muscle[data-region="gluteus-medius"]      { fill: var(--m-warm); }
+.muscle[data-region="hip-flexor"]          { fill: var(--m-warm); }
+.muscle[data-region="quads"]               { fill: var(--m-coral); }
+.muscle[data-region="adductors"]           { fill: var(--m-warm); }
+.muscle[data-region="hamstrings-medial"],
+.muscle[data-region="hamstrings-lateral"]  { fill: var(--m-crimson); }
+.muscle[data-region="calves"]              { fill: var(--m-red); }
+.muscle[data-region="tibialis-anterior"]   { fill: var(--m-light); }
+
+/* Head / face / knees / hands / feet / bones: tendon-beige, not interactive */
 .muscle.inert {
-  fill: rgba(244, 238, 226, 0.28);
-  stroke: rgba(46, 42, 36, 0.22);
-  stroke-width: 0.6;
+  fill: var(--m-bone);
+  stroke: rgba(90, 80, 55, 0.4);
+  stroke-width: 0.4;
   pointer-events: none;
 }
 
@@ -173,15 +208,15 @@ header h1 {
 }
 
 .muscle.hover {
-  fill: var(--accent-light);
-  stroke: var(--accent);
-  stroke-width: 1.3;
+  fill: var(--m-light);
+  stroke: #7a2018;
+  stroke-width: 0.9;
 }
 
 .muscle.selected {
   fill: var(--accent);
-  stroke: #8f201a;
-  stroke-width: 1.3;
+  stroke: #6f1813;
+  stroke-width: 1.1;
 }
 
 /* ── Exercise panel ───────────────────────────────────────── */

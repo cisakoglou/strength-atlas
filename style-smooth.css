@@ -1,0 +1,166 @@
+/* ── Strength Atlas — brand theme (logo-driven) ──────────────── */
+/* Espresso-brown muscles, white separators, warm amber accent,
+   matching logo.png. This is the only view. */
+
+:root {
+  --brand-espresso: #3e2d20;
+  --brand-amber:    #f0a35f;
+  --brand-amber-dk: #e08a3c;
+  --brand-cream:    #f7f1e8;
+  --accent:         var(--brand-amber-dk);
+  --ink:            #2c2118;
+  --ink-muted:      #7a6a59;
+}
+
+/* ── Impressive warm background ──────────────────────────────── */
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--ink);
+  background-color: #efe6d8;
+  background-image:
+    radial-gradient(60% 45% at 50% 34%, rgba(240, 163, 95, 0.20), rgba(240, 163, 95, 0) 70%),
+    radial-gradient(130% 100% at 50% 0%, #fbf6ee 0%, #efe6d8 45%, #ddcfbb 100%);
+  background-attachment: fixed;
+}
+/* Soft vignette for depth */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(120% 80% at 50% 40%, transparent 55%, rgba(62, 45, 32, 0.12) 100%);
+  z-index: 0;
+}
+.workspace, header { position: relative; z-index: 1; }
+
+/* ── Header + unified typography ─────────────────────────────── */
+header {
+  padding: 40px 24px 26px;
+}
+.brand-logo {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 12px;
+  display: block;
+  filter: drop-shadow(0 6px 14px rgba(62, 45, 32, 0.28));
+}
+header h1 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 34px;
+  letter-spacing: -0.02em;
+  color: var(--brand-espresso);
+}
+.tagline {
+  margin-top: 7px;
+  font-family: 'Inter', sans-serif;
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  color: var(--ink-muted);
+}
+
+/* Everything on the page shares Inter */
+.view-caption,
+.panel-header h2,
+.exercise-name,
+.exercise-desc,
+.no-data,
+#tooltip {
+  font-family: 'Inter', sans-serif;
+}
+
+/* ── Figures ─────────────────────────────────────────────────── */
+#body-front { width: 262px; height: 548px; }
+#body-back  { width: 294px; height: 548px; }
+#body-front,
+#body-back {
+  overflow: visible;
+  filter: url(#body-depth);
+}
+
+.diagrams-area { gap: 28px; }
+
+.chart-wrapper {
+  padding: 30px 24px 18px;
+  background: rgba(255, 252, 247, 0.66);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 26px;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.8) inset,
+    0 24px 50px -22px rgba(62, 45, 32, 0.55);
+}
+.view-caption {
+  margin-top: 16px;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--ink-muted);
+}
+
+/* ── Muscle colour ramp (espresso → caramel), white separators ─ */
+.muscle[data-region="neck"]        { fill: #7b4d32; }
+.muscle[data-region="traps"]       { fill: #815134; }
+.muscle[data-region="shoulders"]   { fill: #885535; }
+.muscle[data-region="chest"]       { fill: #8e5936; }
+.muscle[data-region="lats"]        { fill: #955d37; }
+.muscle[data-region="biceps"]      { fill: #9c6238; }
+.muscle[data-region="triceps"]     { fill: #a26639; }
+.muscle[data-region="forearms"]    { fill: #a96b3a; }
+.muscle[data-region="abs"]         { fill: #b06f3b; }
+.muscle[data-region="obliques"]    { fill: #b7743b; }
+.muscle[data-region="lower-back"]  { fill: #be793c; }
+.muscle[data-region="glutes"]      { fill: #c47e3e; }
+.muscle[data-region="adductors"]   { fill: #c78343; }
+.muscle[data-region="quads"]       { fill: #ca8947; }
+.muscle[data-region="hamstrings"]  { fill: #cd8e4c; }
+.muscle[data-region="calves"]      { fill: #cf9351; }
+.muscle[data-region="tibialis"]    { fill: #d29856; }
+
+.muscle {
+  stroke: rgba(251, 246, 238, 0.45);
+  stroke-width: 0.6;
+  stroke-linejoin: round;
+}
+.muscle.inert {
+  fill: #e4d6c2;
+  stroke: rgba(251, 246, 238, 0.4);
+  stroke-width: 0.5;
+}
+
+/* Hover: separators firm up just a touch. */
+.muscle.hover {
+  stroke: rgba(255, 255, 255, 0.85);
+  stroke-width: 1;
+}
+
+/* Selection: the muscle lights up amber (the logo accent); rest recedes. */
+#body-front.has-selection .muscle.interactive:not(.selected),
+#body-back.has-selection  .muscle.interactive:not(.selected) {
+  opacity: 0.28;
+}
+.muscle.selected {
+  fill: var(--brand-amber);
+  stroke: rgba(255, 255, 255, 0.9);
+  stroke-width: 0.9;
+}
+
+/* ── Exercise panel polish ───────────────────────────────────── */
+.panel-header {
+  border-bottom: 1px solid rgba(62, 45, 32, 0.16);
+}
+.panel-header h2 {
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+  color: var(--brand-espresso);
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 720px) {
+  #body-front { width: 145px; height: 304px; }
+  #body-back  { width: 163px; height: 304px; }
+}

@@ -4,3 +4,6 @@
 
 # Local Netlify folder
 .netlify
+
+# Dependencies (none committed — static site)
+node_modules
